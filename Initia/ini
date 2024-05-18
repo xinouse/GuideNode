@@ -92,11 +92,6 @@ EOF
 
 sudo systemctl daemon-reload
 sudo systemctl enable initiad.service
-
-initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book
-
-curl https://snapshot.validatorvn.com/initia/data.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.initia
-
 sudo systemctl start initiad
 
 echo '=============== SETUP FINISHED ==================='
